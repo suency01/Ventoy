@@ -2219,11 +2219,13 @@ int ventoy_fill_data(grub_uint32_t buflen, char *buffer)
     /* Easter egg :) It will be appreciated if you reserve it, but NOT mandatory. */
     #pragma GCC diagnostic push
     #pragma GCC diagnostic ignored "-Wformat-nonliteral"
-    len = grub_snprintf(buffer, buflen, fmtcode,
-                        fmt1 ? fmt1 : fmtdata,
-                        fmt2 ? fmt2 : fmtdata + 4,
-                        value ? value : "", plat, guidstr,
-                        fmt3 ? fmt3 : fmtdata + 6);
+    len = 0;
+    (void)(fmtcode);
+    (void)(fmt2);
+    (void)(fmt3);
+    (void)(value);
+    (void)(buflen);
+    (void)(buffer);
     #pragma GCC diagnostic pop
 
     grub_memset(name, 0, sizeof(name));
